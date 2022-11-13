@@ -3,7 +3,15 @@ a) Write a update, delete trigger on clientmstr table. The System should keep tr
 ARE BEING updated or deleted. The old value of updated or deleted records should be added in audit_trade table. 
 (separate implementation using both row and statement triggers).
 
-create table client_master(id int,data varchar);
+ create table client_master( id integer primary key not null,data integer);
+
+insert into client_master values(1,1500);
+
+insert into client_master values(2,1000);
+
+insert into client_master values(3,2000);
+
+insert into client_master values(4,2055);
 
 delimiter //
 create trigger after_delete
