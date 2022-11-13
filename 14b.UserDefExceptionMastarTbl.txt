@@ -1,3 +1,5 @@
+b) Write a PL/SQL block for following requirement using user defined exception handling. The account_master table records the current balance for an account, which is updated whenever, any deposits or withdrawals takes place. If the withdrawal attempted is more than the current balance held in the account. The user defined exception is raised, displaying an appropriate message. Write a PL/SQL block for above requirement using user defined exception handling.
+
 create table account_master(ID int primary key,Current_balance int);
 mysql> insert into account_master values(1,10000),(2,5000),(3,60000);
 
