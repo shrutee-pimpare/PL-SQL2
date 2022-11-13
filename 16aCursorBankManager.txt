@@ -1,0 +1,29 @@
+
+16a)
+create table Bank(
+Account_no int Primary key,
+
+Status varchar(20));
+
+insert into Bank values(101,"Inactivate"),
+(102,"Inactivate"),
+(103,"Inactivate"),
+(104,"Inactivate"),
+(105,"activate"),
+(106,"activate");
+
+create table Deact(Account_no int primary key);
+
+insert into Deact values(100),(101),(102),(103),(104);
+
+DELIMITER $
+create procedure mark()
+Begin
+update Bank set Status="activate" where Account_no in (select Account_no from Deact) ;
+if((ROW_COUNT)>0) then
+select('Number of accounts activates'||ROW_COUNT);
+else
+select('No Account is Inactivate');
+end if;
+end;
+$
