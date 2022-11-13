@@ -1,3 +1,5 @@
+ a) Write an SQL code block these raise a user defined exception where business rule is voilated. BR for client_ master table specifies when the value of bal_due field is less than 0 handle the exception.
+ 
  create database clientmaster
  use clientmaster
  create table client_master( id integer primary key not null,bal_due integer);
